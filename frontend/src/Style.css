@@ -1,0 +1,146 @@
+
+/* Reset et styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+/* Header */
+.site-header {
+    /* Styles communs pour l'en-tête */
+    padding: 1rem 2rem;
+    text-align: left;
+    background-color: aqua;
+    color: black;
+    font-size: small;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.main-nav {
+    /* Styles pour la navigation principale */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: #007bff;
+}
+.main-nav a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+/* Footer */
+/* Styles pour le footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-nav a:hover {
+    color: #ddd;
+}
+.footer-nav a.active {
+    color: #4CAF50;
+    font-weight: bold;
+}
+/* Style responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Styles des formulaires */
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+/* Styles spécifiques par page */
+/* Page d'accueil */
+.home-section {
+    /* Styles spécifiques à la page d'accueil */
+}
+/* Page Contact */
+.contact-form {
+    /* Styles spécifiques au formulaire de contact */
+}
+/* Page À propos */
+.apropos-section {
+    /* Styles spécifiques à la page À propos */
+}
+/* Page Mentions légales */
+.mentions-legales {
+    /* Styles spécifiques aux mentions légales */
+}
+/* Utilitaires */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

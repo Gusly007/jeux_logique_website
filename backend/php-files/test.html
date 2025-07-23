@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Mathématique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Petit test mental 🧠</h1>
+    <div id="question">Chargement de la question...</div>
+
+    <input type="number" id="reponse" placeholder="Votre réponse ici">
+    <br>
+    <button onclick="verifier()">Vérifier</button>
+
+    <p id="resultat"></p>
+
+    <script>
+        let question = null;
+
+        // Charger la question depuis l'API
+        function chargerQuestion() {
+            fetch("http://localhost:8000/api/question")
+                .then(res => res.json())
+.then(data => {
+                    question = data;
+                    // Afficher la question formatée
+                    document.getElementById("question").innerText =
+                        `Combien fait ${data.arg1} ${data.operator} ${data.arg2} ?`;
+                    // Afficher la réponse complète de l'API dans la console
+                    console.log('Réponse complète de l\'API:', data);
+                })
+        }
+
+        // Vérifier la réponse avec l'API
+        function verifier() {
+            const valeur = document.getElementById("reponse").value;
+            if (!valeur) {
+                alert("Veuillez entrer une réponse.");
+                return;
+            }
+
+            fetch("http://localhost:8000/api/index.php/verify", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    reponse: valeur
+                })
+            })
+            .then(res => res.json())
+            .then(result => {
+                document.getElementById("resultat").innerText = result.message;
+                document.getElementById("reponse").value = "";
+                setTimeout(() => {
+                    chargerQuestion();
+                    document.getElementById("resultat").innerText = "";
+                }, 2000);
+            })
+            .catch(() => {
+                document.getElementById("resultat").innerText = "Erreur lors de la vérification.";
+            });
+        }
+
+        // Charger une première question au chargement de la page
+        window.onload = chargerQuestion;
+    </script>
+
+</body>
+</html>

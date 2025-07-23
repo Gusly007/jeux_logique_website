@@ -1,0 +1,26 @@
+FROM php:8.1-fpm
+
+# Installer les dépendances système
+RUN apt-get update && apt-get install -y \
+    zip \
+    unzip \
+    curl \
+    git \
+    libzip-dev \
+    libpng-dev
+
+# Installer les extensions PHP nécessaires
+RUN docker-php-ext-install mysqli pdo pdo_mysql gd zip
+
+# Installer Composer
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
+
+# Définir le dossier de travail
+WORKDIR /var/www/html
+
+# Copier le code PHP (y compris composer.json)
+COPY php-files/ /var/www/html/
+
+# Installer les dépendances PHP du projet
+RUN composer install

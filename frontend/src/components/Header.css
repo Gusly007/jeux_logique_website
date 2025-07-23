@@ -1,0 +1,38 @@
+.header {
+  background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.header a:hover,
+.header a:focus {
+  color: var(--accent-color, #ffd700);
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .header a {
+    margin: 0 0.4rem;
+  }
+}

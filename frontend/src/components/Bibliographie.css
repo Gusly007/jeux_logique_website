@@ -1,0 +1,55 @@
+/* Bibliographie.css */
+
+.biblio-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.biblio-container h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.biblio-liste {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.biblio-item {
+  border: 2px solid #2980b9;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ecf6ff, #d6eaff);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.biblio-item:hover,
+.biblio-item:focus-within {
+  transform: scale(1.015);
+  box-shadow: 0 8px 20px rgba(41, 128, 185, 0.3);
+  border-color: #3498db;
+}
+
+.biblio-item h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.biblio-item p {
+  color: #444;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.biblio-item strong {
+  color: #2c3e50;
+}

@@ -1,0 +1,50 @@
+/* Contact.css */
+
+.container {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 3rem auto;
+  border: 2px solid #2980b9;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ecf6ff, #d6eaff);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 25px rgba(41, 128, 185, 0.25);
+}
+
+.container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.contact-content {
+  color: #444;
+  font-size: 1rem;
+}
+
+.contact-content p {
+  margin-bottom: 1rem;
+}
+
+.contact-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.contact-content li::before {
+  content: '📍';
+  position: absolute;
+  left: 0;
+}
