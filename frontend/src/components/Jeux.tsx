@@ -17,14 +17,10 @@ const Jeux: React.FC = () => {
   useEffect(() => {
     const fetchJeux = async () => {
       try {
-        const token = localStorage.getItem('token');
+        
         const response = await fetch('http://localhost:8085/api/jeux',
           {
             credentials: "include",
-
-         headers: {
-         'Authorization': `Bearer ${token}`
-         }
           }
         );
         console.log("Réponse brute :", response);

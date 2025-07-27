@@ -9,6 +9,8 @@ require_once __DIR__ . '/../controllers/JeuxListeController.php';
 require_once __DIR__ . '/../controllers/BibliographieController.php';
 require_once __DIR__ . '/../controllers/MotManquantController.php';
 require_once __DIR__ . '/../controllers/FactorielleController.php';
+require_once __DIR__ . '/../controllers/CheckSessionController.php';
+
 
 
 
@@ -22,6 +24,7 @@ $controllers = [
     'bibliographie' => new BibliographieController(),
     'motmanquant'   => new MotManquantController(),
     'factorielle'   => new FactorielleController(),
+    'checksession'  => new CheckSessionController(), 
 ];
 
 // === Définition des routes ===
@@ -31,6 +34,7 @@ $routes = [
         '/api/jeux'            => [$controllers['jeux'], 'getJeux'],
         '/api/bibliographie'   => [$controllers['bibliographie'], 'getAll'],
         '/api/motmanquant'     => [$controllers['motmanquant'], 'getQuestions'],
+        '/api/checksession'    => [$controllers['checksession'], 'checkSession'],
     ],
     'POST' => [
         '/api/contact'              => [$controllers['contact'], 'sendMessage'],

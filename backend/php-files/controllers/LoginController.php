@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../models/LoginModel.php';
 require_once __DIR__ . '/../models/ProfilModel.php';
 require_once __DIR__ . '/../config/DataBaseConnexion.php';
@@ -43,8 +46,6 @@ class LoginController {
 
             if ($user) {
                 error_log("Utilisateur authentifié : {$user['username']}");
-
-                session_start();
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
 
