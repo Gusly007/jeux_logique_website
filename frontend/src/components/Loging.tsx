@@ -45,9 +45,6 @@ const Login: React.FC = () => {
 
       // ✅ Appeler login avec username et profil
       login(data.profile.username, data.profile);
-
-      // ✅ Tu n'as plus besoin d'appeler navigate ici, c'est fait dans le contexte je le fait que pour tester mais nouvelle page
-      // navigate('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Une erreur est survenue');
     }

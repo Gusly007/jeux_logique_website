@@ -5,6 +5,9 @@
   font-size: 0.9rem;
   border-top: 2px solid #34495e;
   position: relative;
+  bottom : 0;
+  width: 100%;
+  
 }
 
 .footer-content {
@@ -23,14 +26,7 @@
   opacity: 0.95;
 }
 
-.footer-section h3 {
-  font-size: 1.1rem;
-  color: #ecf0f1;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  border-bottom: 1px solid #555;
-  padding-bottom: 0.5rem;
-}
+
 
 .footer-section ul {
   list-style: none;
@@ -81,10 +77,5 @@
 
   .footer-section {
     width: 100%;
-  }
-
-  .footer-section h3 {
-    border: none;
-    margin-top: 1rem;
   }
 }
