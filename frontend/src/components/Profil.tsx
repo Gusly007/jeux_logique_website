@@ -6,7 +6,6 @@ import './profil.css';
 type Profile = {
   username: string;
   email: string;
-  age: number;
 };
 
 type User = {
@@ -37,7 +36,6 @@ const Profil: React.FC = () => {
     <p>Voici vos informations de profil :</p>
       <h2>Profil de {profile.username}</h2>
       <p><strong>Nom d'utilisateur :</strong> {profile.username}</p>
-      <p><strong>age</strong>{profile.age} </p>
       <p><strong>Email :</strong> {profile.email}</p>
       <p><strong>score:</strong> </p>
 
