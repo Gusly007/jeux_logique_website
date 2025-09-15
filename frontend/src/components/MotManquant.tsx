@@ -51,7 +51,7 @@ const MotManquant: React.FC = () => {
     setIsWaiting(true);
 
     try {
-      const res = await fetch('http://http://10.130.162.168:8085/api/motmanquantverify', {
+      const res = await fetch('http://localhost:8085/api/motmanquantverify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(

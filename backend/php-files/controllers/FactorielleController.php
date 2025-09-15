@@ -10,7 +10,7 @@ class FactorielleController {
 
     public function getQuestion() {
         header('Content-Type: application/json');
-        $question = $this->model->generateQuestion(); // ["question" => 5, "answer" => 120]
+        $question = $this->model->generateQuestion(); 
         echo json_encode([
             "question" => $question['question']
         ]);

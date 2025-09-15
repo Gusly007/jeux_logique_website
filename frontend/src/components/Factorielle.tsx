@@ -24,7 +24,7 @@ const Factorielle: React.FC = () => {
     setQuestionValue(null);
 
     try {
-      const res = await fetch('http://http://10.130.162.168:8085/api/fact');
+      const res = await fetch('http://localhost:8085/api/fact');
       const data = await res.json();
 
       if (data.question) {
@@ -47,7 +47,7 @@ const Factorielle: React.FC = () => {
     setIsWaiting(true);
 
     try {
-      const res = await fetch('http://http://10.130.162.168:8085/api/factanswer', {
+      const res = await fetch('http://localhost:8085/api/factanswer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

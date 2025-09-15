@@ -3,14 +3,12 @@
 class FactorielleModel
 {
     public function __construct() {
-        // Initialisation si nécessaire
+       
     }
  public function generateQuestion() {
-    $n = rand(1, 10);
-    $fact = $this->factorielle($n); // méthode factorielle que tu dois définir
+    $n = rand(1, 5); 
     return [
         "question" => "$n!",
-        "answer" => $fact
     ];
 }
 
